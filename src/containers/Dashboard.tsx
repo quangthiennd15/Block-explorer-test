@@ -1,4 +1,4 @@
-import { Grid, Typography, CircularProgress } from "@material-ui/core";
+import { Grid, Typography, CircularProgress, Button } from "@material-ui/core";
 import useEthRPCStore from "../stores/useEthRPCStore";
 import * as React from "react";
 import { weiToGwei } from "../components/formatters";
@@ -9,6 +9,7 @@ import ChartCard from "../components/ChartCard";
 import BlockListContainer from "./BlockList";
 import { hexToNumber } from "@etclabscore/eserialize";
 import { Block as IBlock, IsSyncingResult as ISyncing} from "@etclabscore/ethereum-json-rpc";
+import { ArrowForwardIos } from "@material-ui/icons";
 
 const useState = React.useState;
 
@@ -126,7 +127,15 @@ export default (props: any) => {
         </Grid>
       </Grid>
       <br />
-
+      <Grid container justify="flex-end">
+        <Button
+          color="primary"
+          variant="outlined"
+          endIcon={<ArrowForwardIos />}
+          onClick={() => props.history.push("/stats/miners")}
+        >More Informations</Button>
+      </Grid>
+      <br />
       <BlockListContainer
         from={Math.max(blockNumber - 14, 0)}
         to={blockNumber}

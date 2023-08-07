@@ -11,6 +11,7 @@ export default function() {
     {
       name: "Matic - Mumbai",
       network: "testnet",
+      // rpc: ["http://18.224.19.137:8545"]
       rpc: ["http://52.1.233.47:9545"],
     },
   ]);

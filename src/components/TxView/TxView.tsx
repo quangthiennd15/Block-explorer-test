@@ -131,6 +131,10 @@ function TxView(props: ITxViewProps) {
             <TableCell>s</TableCell>
             <TableCell>{tx.s}</TableCell>
           </TableRow>
+          <TableRow>
+            <TableCell>Type</TableCell>
+            <TableCell>{hexToNumber(tx.type)}</TableCell>
+          </TableRow>
         </TableBody>
       </Table>
 

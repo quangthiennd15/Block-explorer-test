@@ -5,7 +5,6 @@ export interface IAddressViewProps {
   address: string;
   balance: string;
   txCount: number;
-  code: string;
 }
 
 function AddressView(props: IAddressViewProps) {
@@ -16,13 +15,6 @@ function AddressView(props: IAddressViewProps) {
         <Typography variant="h6">{"Address"}: {address}</Typography>
         <Typography variant="h6">{"Balance"}: {balance} ETH</Typography>
         <Typography variant="h6">{"Transactions"}: {txCount}</Typography>
-        <br />
-        {/* <div>
-          <div>{t("Code")}</div>
-          <pre>
-            <code>{code}</code>
-          </pre>
-        </div> */}
       </CardContent>
     </Card>
   );

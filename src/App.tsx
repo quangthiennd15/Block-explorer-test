@@ -48,6 +48,7 @@ import useChainListStore from "./stores/useChainListStore";
 import useEthRPCStore from "./stores/useEthRPCStore";
 import AddChain from "./components/AddChain/AddChain";
 import { NetworkWifi } from "@material-ui/icons";
+import MinerStatsPage from "./components/MinerStatsPage";
 
 const history = createPreserveQueryHistory(createBrowserHistory, [
   "network",
@@ -331,6 +332,12 @@ function App(props: any) {
             <CssBaseline />
             <Switch>
               <Route path={"/"} component={Dashboard} exact={true} />
+              <Route
+                path={"/stats/miners"}
+                component={MinerStatsPage}
+                exact={true}
+              />
+              <Route path={"/stats/miners/:block"} component={MinerStatsPage} />
               <Route path={"/block/:hash/raw"} component={BlockRawContainer} />
               <Route path={"/block/:hash"} component={Block} />
               <Route path={"/blocks/:number"} component={NodeView} />
